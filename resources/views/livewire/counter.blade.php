@@ -1,6 +1,15 @@
 <div>
-    こんにちは。 {{ $this->name }}さん
+    こんにちは。 {{ $name }}さん
 
+    <br>
+
+    <form wire:submit.prevent="$refresh">
+        <input type="text" wire:model.defer="name">
+        <div>
+            現在の文字数 : {{ mb_strlen($name) }}
+        </div>
+        <input type="submit" value="送信する">
+    </form>
     <hr>
 
     {{-- 親のdiv要素はかならず一個だけ。 --}}

@@ -9,7 +9,7 @@ class Counter extends Component
     // public にしたものは、自動でviewに中身がいく。
     public $counter = 0;
 
-    private $name = 'fukushima';
+    public $name = 'fukushima';
 
     public function increment(int $num = 1)
     {
