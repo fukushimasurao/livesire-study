@@ -8,9 +8,12 @@ class Counter extends Component
 {
     // public にしたものは、自動でviewに変数がいく。
     public $counter = 0;
-    public function incriment()
+    public function increment(int $num = 1)
     {
-        $this->counter++;
+        $this->counter += $num;
+        if ($this->counter > 100) {
+            $this->counter = 1;
+        }
     }
     public function render()
     {
