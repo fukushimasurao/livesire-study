@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\PostList;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,9 @@ Route::get('/', function () {
 Route::get('counter', function () {
     return view('counting');
 });
+
 Route::get('jyanken', function () {
     return view('jyanken');
 });
+
+Route::get('posts', PostList::class);
