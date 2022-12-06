@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>タイトル</title>
     @livewireStyles
-
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         input,
         textarea,

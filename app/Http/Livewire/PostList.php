@@ -4,9 +4,11 @@ namespace App\Http\Livewire;
 
 use App\Models\Post;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class PostList extends Component
 {
+    use WithPagination;
     public $word;
 
     // mountや、updatedXxxを使うと、その都度ハイドレート（無駄なSQL）が走るので、render内で対応する。
@@ -25,7 +27,7 @@ class PostList extends Component
         $posts = Post::query()
         // whenはifと同じ
         ->when($this->word, fn ($q, $val) => $q->where('title', 'LIKE', '%' . $val . '%'))
-        ->get();
+        ->paginate(10);
 
         return view(
             'livewire.post-list',
