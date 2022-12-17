@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 
 <head>
     <meta charset="utf-8">
@@ -8,8 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         input,
-        textarea,
-        button {
+        textarea
+        {
             border: 1px solid gray;
             padding: 4px !important;
         }
@@ -17,6 +17,7 @@
         input[type=submit],
         input[type=button] {
             padding: 4px !important;
+            cursor: pointer;
         }
 
         td {

@@ -11,17 +11,11 @@ class PostList extends Component
     use WithPagination;
     public $word;
 
-    // mountや、updatedXxxを使うと、その都度ハイドレート（無駄なSQL）が走るので、render内で対応する。
-    // public $posts;
-    // public function mount()
-    // {
-    //     $this->posts = Post::get();
-    // }
-    // public function updatedWord($val)
-    // {
-    //     $this->posts = Post::where('title', 'LIKE', '%' . $val . '%')->get();
-    // }
-
+    // 検索されるたびに最初の状態に戻す
+    public function updatingWord()
+    {
+        $this->resetPage();
+    }
     public function render()
     {
         $posts = Post::query()
@@ -31,8 +25,6 @@ class PostList extends Component
 
         return view(
             'livewire.post-list',
-            // ['posts' => Post::get()],
-            // ['posts' => $this->posts],
             ['posts' => $posts],
         );
     }
